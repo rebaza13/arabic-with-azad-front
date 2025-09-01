@@ -1,0 +1,33 @@
+@use 'mixins';
+
+:root {
+  @include mixins.generate-theme('light');
+}
+
+// 3. Set the dark theme overrides.
+//    This tells our "robot" to generate the dark theme variables,
+//    which will apply only when the <html> tag has data-theme="dark".
+[data-theme='dark'] {
+  @include mixins.generate-theme('dark');
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include mixins.generate-theme('dark');
+  }
+}
+
+
+// --- USAGE EXAMPLE ---
+// Now we can use these variables to style our site.
+
+body {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  // Use the CSS variable for the background.
+  background-color: var(--bg);
+  // Use the CSS variable for the text color.
+  color: var(--text-color);
+    height: 100vh;
+  // Add a smooth transition for when the theme changes!
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

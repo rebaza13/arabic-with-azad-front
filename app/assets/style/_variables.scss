@@ -1,0 +1,27 @@
+// dark mode strategy using HSL color values
+
+$dark-bg-dark: hsl(0%, 0%, 0%);
+$dark-bg: hsl(0%, 0%, 5%);
+$dark-bg-light: hsl(0%, 0%, 10%);
+
+$dark-text-color: hsl(0%, 0%, 95%);
+$dark-text-muted: hsl(0%, 0%, 70%);
+
+$dark-border: hsl(0%, 0%, 30%);
+$dark-gradient: linear-gradient(0deg, $dark-bg,95%, $dark-bg-light);
+$dark-gradient-hover: linear-gradient(0deg, $dark-bg-light, $dark-bg);
+$dark-highlight: hsl(0, 0%, 60%);
+// light mode strategy using HSL color values
+
+$bg-dark:hsl(0%, 0%, 90%); 
+$bg: hsl(0%, 0%, 95%);
+$bg-light: hsl(0%, 0%, 100%);
+
+$text-color: hsl(0%, 0%, 5%);
+$text-muted: hsl(0%, 0%, 30%);
+
+$border: hsl(0%, 0%, 30%);
+$gradient: linear-gradient(0deg, $bg, 95%, $bg-light); // Uses light bg
+$gradient-hover: linear-gradient(0deg, $bg-light, $bg); // Uses light bg
+$highlight: hsl(0, 0%, 100%);
+$shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.0.7), 0px 4px 4px hsla(0, 0%, 0%, 0.15);

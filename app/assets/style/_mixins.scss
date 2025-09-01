@@ -1,0 +1,16 @@
+// 1. Import the built-in 'sass:map' module
+@use 'sass:map';
+@use 'themes'; // Give this file access to the variables in _themes.scss
+
+// This is our "robot". It takes a theme name ('light' or 'dark').
+@mixin generate-theme($theme-name) {
+  // 2. Use the function from the module: map.get(...) instead of map-get(...)
+  $theme-map: map.get(themes.$themes, $theme-name);
+
+  // Then it loops through every color in that theme.
+  @each $key, $value in $theme-map {
+    // And it prints a CSS Custom Property for each one.
+    // e.g., --bg: hsl(0%, 0%, 95%);
+    --#{$key}: #{$value};
+  }
+}
