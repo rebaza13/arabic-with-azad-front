@@ -1,39 +1,28 @@
 <template>
-  <button @click="toggleTheme" class="theme-switcher">
-    Toggle Theme
-  </button>
+  <div class="hero">
+   <div class="hero__image-container">
+        <div class="hero__img">
+          <img :src="photo" alt="">
+        </div>
+        <div class="hero__img-circle1"></div>
+        <div class="hero__img-circle2"></div>
+      </div>
+    <div class="hero__content">
+      <h1 class="hero__title">فێربوونی <span class="hero__title--highlight">زمان</span></h1>
+      <p class="hero__subtitle">پلاتفۆرمێک بۆ فێربونی عەرەبی</p>
+      <div class="hero__description">ڕێگایەک بۆ باشترکردنی زمانەوانی عربی لەڕێگەی چەند بژاردەیەکی دیاریکراو ئاست بەرز.</div>
+      <button class="hero__button">دەستپێکردن
+        <img :src="arrow" class="hero__button-arrow-left"></img>
+        <img :src="arrow" class="hero__button-arrow-right"></img>
+      </button>
+      
+    </div>
+
+     
+  </div>
 </template>
 
-<script setup>
-import { ref, watchEffect, onMounted } from 'vue';
-
-// Create a reactive state to hold the current theme
-const theme = ref('light');
-
-// Create a function to toggle the theme
-function toggleTheme() {
-  theme.value = theme.value === 'light' ? 'dark' : 'light';
-}
-
-// 'onMounted' ensures this code only runs in the browser
-onMounted(() => {
-  // Now it's safe to access the 'document'
-  watchEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme.value);
-  });
-});
+<script setup lang="ts">
+import arrow  from '~/assets/images/left-arrow.png'
+import photo from '~/assets/images/photo.jpg'
 </script>
-
-<style lang="scss">
-.theme-switcher {
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  
-  // Use our theme variables for styling the button itself!
-  background-color: var(--bg-light);
-  color: var(--text-color);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-</style>

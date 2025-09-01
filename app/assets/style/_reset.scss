@@ -1,0 +1,57 @@
+// assets/scss/_reset.scss
+
+// 1. A more intuitive box model.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Remove default margin and padding.
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Set core root defaults.
+html {
+  // Allow smooth scrolling behavior.
+  scroll-behavior: smooth;
+}
+
+// 4. Set core body defaults.
+body {
+  min-height: 100vh;
+  // Use a more natural line height for better readability.
+  line-height: 1.5;
+}
+
+// 5. Remove list styles on ul, ol elements with a list role, which suggests no styling.
+ul[role='list'],li,
+ol[role='list'] {
+  list-style: none;
+}
+a {text-decoration: none;color: inherit;}
+// 6. Make images easier to work with.
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// 7. Inherit fonts for inputs and buttons for consistency.
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

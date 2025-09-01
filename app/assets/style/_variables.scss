@@ -1,27 +1,74 @@
 // dark mode strategy using HSL color values
 
-$dark-bg-dark: hsl(0%, 0%, 0%);
-$dark-bg: hsl(0%, 0%, 5%);
-$dark-bg-light: hsl(0%, 0%, 10%);
+$dark-bg-dark: hsl(0, 0%, 0%);
+$dark-bg: hsl(0, 0%, 5%);
+$dark-bg-light: hsl(0, 0%, 10%);
 
-$dark-text-color: hsl(0%, 0%, 95%);
-$dark-text-muted: hsl(0%, 0%, 70%);
+$dark-text-color: hsl(0, 0%, 95%);
+$dark-text-muted: hsl(0, 0%, 70%);
 
-$dark-border: hsl(0%, 0%, 30%);
+$dark-border: hsl(0, 0%, 30%);
 $dark-gradient: linear-gradient(0deg, $dark-bg,95%, $dark-bg-light);
 $dark-gradient-hover: linear-gradient(0deg, $dark-bg-light, $dark-bg);
 $dark-highlight: hsl(0, 0%, 60%);
 // light mode strategy using HSL color values
 
-$bg-dark:hsl(0%, 0%, 90%); 
-$bg: hsl(0%, 0%, 95%);
-$bg-light: hsl(0%, 0%, 100%);
+$bg-dark:hsl(0, 0%, 90%); 
+$bg: hsl(0, 0%, 95%);
+$bg-light: hsl(0, 0%, 100%);
 
-$text-color: hsl(0%, 0%, 5%);
-$text-muted: hsl(0%, 0%, 30%);
+$text-color: hsl(0, 0%, 5%);
+$text-muted: hsl(0, 0%, 30%);
 
-$border: hsl(0%, 0%, 30%);
+$border: hsl(0, 0%, 30%);
 $gradient: linear-gradient(0deg, $bg, 95%, $bg-light); // Uses light bg
 $gradient-hover: linear-gradient(0deg, $bg-light, $bg); // Uses light bg
 $highlight: hsl(0, 0%, 100%);
-$shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.0.7), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+$shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+
+$primary-color: hsl(294 100% 65.9%);
+$secondary-color: hsl(79, 84%, 38%);
+
+// assets/scss/_variables.scss
+
+// ------------------------------
+// # SPACING & SIZING
+// A consistent spacing scale based on 1rem (typically 16px).
+// ------------------------------
+$space-xs:  0.25rem; // 4px
+$space-sm:  0.5rem;  // 8px
+$space-md:  1rem;    // 16px
+$space-lg:  1.5rem;  // 24px
+$space-xl:  2rem;    // 32px
+$space-xxl: 4rem;    // 64px
+$space-3xl: 6rem;    // 96px
+$space-4xl: 8rem;    // 128px
+$space-5xl: 10rem;    // 160px
+$border-radius: 1rem; //
+// ------------------------------
+// # TYPOGRAPHY
+// Font sizes and weights for a clear typographic hierarchy.
+// ------------------------------
+$font-size-sm:   0.875rem; // 14px
+$font-size-base: 1rem;
+$font-size-lg:   1.25rem; // 20px
+$font-size-xl:   1.5rem; // 24px
+$font-size-xxl:  2rem; // 32px
+$font-size-3xl: 3rem; // 48px
+$font-size-4xl: 4rem; // 64px   
+$font-size-5xl: 5rem; // 80px
+
+$fw-regular: 400;
+$fw-bold:    700;
+
+// ------------------------------
+// # LAYOUT
+// Variables for managing breakpoints and container widths.
+// ------------------------------
+$container-max-width: 1200px;
+$container-padding: $space-lg;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1200px;
