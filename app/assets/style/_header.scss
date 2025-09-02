@@ -10,6 +10,12 @@
         color: $text-color;
         text-transform: uppercase;
         margin: 0 $space-xl;
+
+        
+            @include r.respond-to(laptop) {
+            font-size: $font-size-base;
+             margin: 0 $space-3xl;
+        }
         
     }
     &__logo-hilighted {
@@ -79,16 +85,19 @@
 
 #menuToggle
 {
-  display: block;
+  display: none;
   /* You can also use relative/absolute here if you want to stay on the top */
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top:40px;
+  right: 50px;
   
   z-index: 1;
   
   -webkit-user-select: none;
   user-select: none;
+  @include r.respond-to(laptop){
+    display: block;
+  }
 }
 
 #menuToggle a
@@ -107,6 +116,7 @@
 
 #menuToggle input
 {
+  
   display: block;
   width: 40px;
   height: 32px;
@@ -127,15 +137,16 @@
  */
 #menuToggle span
 {
+  
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: $text-muted;
   border-radius: 3px;
-  
+ 
   z-index: 1;
   
   transform-origin: 4px 0px;
@@ -161,9 +172,13 @@
  */
 #menuToggle input:checked ~ span
 {
+  
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
+}
+#menuToggle input:checked:hover ~ span {
+  background-color: $primary-color;
 }
 
 /*
@@ -192,19 +207,25 @@
   position: absolute;
   max-width: 400px;
   width: 100vw;
+  right: -5rem;
   max-height: 100vh;
-  margin: -100px 0 0 -50px;
+  margin: -100px 0;
   padding: 50px;
   padding-top: 125px;
   box-sizing: border-box;
   overflow-y: auto;
-  background: #ededed;
+  background: rgba(233, 233, 233, 0.7); 
+
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
+  border-bottom-left-radius: 1rem;
+ backdrop-filter: blur(10px); /* common usage */
+
+ 
   /* to stop flickering of text in safari */
   
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+ 
+  transform: translate(100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
@@ -219,6 +240,7 @@
 {
   cursor: pointer;
 }
+
 
 /*
  * And let's slide it in from the left

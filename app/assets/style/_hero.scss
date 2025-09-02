@@ -4,17 +4,18 @@
 .hero {
     position: relative;
     display: flex;
-
-    justify-content: center;
-    overflow: hidden;
+   
+  justify-content: center;
+    
     height: calc(100vh - 100px);
     gap: $space-4xl;
     align-items: center;
     @include r.respond-to(laptop) {
-        overflow: auto;
+        
     }
-    @include r.respond-to(tablet) {
+    @include r.respond-to(laptop) {
         height: auto;
+        overflow-x: clip;
         flex-direction: column;
         margin-right: 0;
         padding-left: 0;
@@ -24,9 +25,11 @@
 
     // contnet
     &__content {
+        position: relative;
         display: flex;
         flex-direction: column;
-        @include r.respond-to(tablet) {
+        @include r.respond-to(laptop) {
+            margin-top: 2rem;
             padding: 0 $space-md;
             align-items: center;
             justify-content: center;
@@ -68,13 +71,15 @@
         font-size: $font-size-xl;
         margin: $space-lg 0;
         color: $text-muted;
-        text-align: center;
+        
+        @include r.respond-to(tablet){
+            text-align: center;
+        }
     }
 
     &__button {
         position: absolute;
-        bottom: 12rem;
-        right: 32%;
+        bottom: -5rem;
         font-size: $font-size-xxl;
         border-radius: $border-radius;
         background-color: $primary-color;
@@ -83,18 +88,7 @@
         border: 1px solid $border;
         transition: transform 0.2s;
 
-        @include r.respond-to(desktop) {
-            bottom: 10%;
-        }
-        @include r.respond-to(laptop) {
-            right: 62%;
-        }
-        @include r.respond-to(tablet) {
-            position: relative;
-            bottom: 0;
-            right: 0;
-            margin-bottom: 1rem;
-        }
+    
 
         &:hover {
             transform: scale(1.05);
@@ -128,9 +122,10 @@
         position: relative;
         transform: rotate(15deg);
 
-        @include r.respond-to(tablet) {
+        @include r.respond-to(laptop) {
+
             margin-top: 5rem;
-            margin-left: -3rem;
+      
         }
     }
 
@@ -146,6 +141,7 @@
             width: 20rem;
         }
         @include r.respond-to(laptop) {
+            
             height: 25rem;
             width: 15rem;
         }
