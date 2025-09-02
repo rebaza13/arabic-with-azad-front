@@ -1,0 +1,114 @@
+@use 'variables' as *;
+.dashboard {
+     height: calc(100vh - 100px);
+     display: flex;
+    padding: 0 $space-xl;
+    &__left {
+       flex: 2;
+          background-color: aquamarine;
+    }
+
+
+    // right
+    &__right {
+        flex: 1;
+    }
+
+    .welcome {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            font-size: $font-size-xxl;
+            display: flex;
+            align-items: center;
+            span {
+                padding-right: 1rem;
+                font-weight: 400;
+            }
+        }
+
+        &__subtitle {
+            font-size: $font-size-base;
+            padding-top: $space-md;
+            color: $text-muted;
+        }
+    }
+
+    .course-status {
+        padding-top: $space-xxl;
+
+        &__title {
+            font-size: $font-size-lg;
+            padding-bottom: $space-md;
+        }
+        
+        &__card {
+            background-color: #fafafa;
+            margin: 0.875rem 0;
+            padding: 1rem;
+            border-radius: $space-md;
+            display: flex;
+            max-width: 25rem;
+            gap: $space-lg;
+
+        }
+        &__progress {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+              &-circle{
+            width: 60px;
+            height: 60px;
+            background-color: $secondary-color;
+            border-radius: 50%;
+        }
+            &-percentage{
+                color: $secondary-color;
+                font-weight: bold;
+                font-size: $font-size-lg;
+            }
+        }
+
+        &__card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            &-title {
+                font-size: $font-size-lg;
+                font-weight: 700;
+            }
+            &-grid {
+                color: $text-muted;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                font-size: $font-size-lg;
+                p {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            }
+            &-buttons {
+                display: flex;
+                gap: $space-md;
+
+                button:nth-child(1){
+                   padding: 0.25rem 1rem;
+                   border: 2px solid $secondary-color;
+                   border-radius: $space-sm;
+                   color: $dark-bg;
+                }
+                button:nth-child(2) {
+                    background-color: $secondary-color;
+                    padding: 0.25rem 1rem;
+                    border-radius: $space-sm;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

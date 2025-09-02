@@ -11,10 +11,10 @@
       <h1 class="hero__title">فێربوونی <span class="hero__title--highlight">زمان</span></h1>
       <p class="hero__subtitle">پلاتفۆرمێک بۆ فێربونی عەرەبی</p>
       <div class="hero__description">ڕێگایەک بۆ باشترکردنی زمانەوانی عربی لەڕێگەی چەند بژاردەیەکی دیاریکراو ئاست بەرز.</div>
-      <button class="hero__button">دەستپێکردن
+      <NuxtLink to="/dashboard" class="hero__button">دەستپێکردن
         <img :src="arrow" class="hero__button-arrow-left"></img>
         <img :src="arrow" class="hero__button-arrow-right"></img>
-      </button>
+      </NuxtLink>
       
     </div>
 
